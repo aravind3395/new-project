@@ -47,7 +47,8 @@ Insurance_details id =new Insurance_details (driver);
     public void click_the_ecter_button() throws InterruptedException {
 
         click(si.getNext());
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Thread.sleep(6000);
 
     }
 
@@ -57,7 +58,7 @@ Insurance_details id =new Insurance_details (driver);
         sendkey(id.getAddress(), "232 Forsyth St SW, Atlanta, GA 30303, USA");
         slep(driver);
         down(driver);
-        enterkey(driver);
+        enter(driver);
 
 
     }
@@ -68,12 +69,12 @@ Insurance_details id =new Insurance_details (driver);
         click(id.getType());
         down(driver);
         up(driver);
-        enterkey(driver);
+        enter(driver);
         slep(driver);
         click(id.getInsurance());
         Thread.sleep(Duration.ofMillis(3000));
         down(driver);
-        enterkey(driver);
+        enter(driver);
     }
 
     @And("user enter personal details")
@@ -82,15 +83,15 @@ Insurance_details id =new Insurance_details (driver);
         sendkey(id.getName(),"aravind prakash");
         slep(driver);
         click(id.getRelationship());
-        enterkey(driver);
+        enter(driver);
         slep(driver);
         sendkey(id.getDateofbirth(), "03/03/1990");
-        enterkey(driver);
+        enter(driver);
         tab(driver);
         slep(driver);
         click(id.getGender());
         down(driver);
-        enterkey(driver);
+        enter(driver);
         slep(driver);
         sendkey(id.getPlno(),"78474876");
         slep(driver);
@@ -100,31 +101,38 @@ Insurance_details id =new Insurance_details (driver);
 
     @And("user upload insurance card image")
     public void userUploadInsuranceCardImage() throws InterruptedException, AWTException {
-        click(id.getFrontimage());
+       click(id.getFrontimage());
+       slep(driver);
+       StringSelection s = new StringSelection("Documents");
+       Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);
         slep(driver);
-        StringSelection st= new StringSelection("Downloads");
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(st,null);
-        copy_paste(driver);
-        enterkey(driver);
+       copy_paste(driver);
         slep(driver);
-        StringSelection st1= new StringSelection("25 (1) (1).jpg");
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(st1,null);
+       enter(driver);
+        StringSelection s1 = new StringSelection("tamil");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s1,null);
+        slep(driver);
         copy_paste(driver);
-        enterkey(driver);
+        slep(driver);
+        enter(driver);
+
+
         click(id.getBackimage());
-        slep(driver);
-//        StringSelection st= new StringSelection("");
-//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(st,null);
-//        copy_paste(driver);
-//        enterkey(driver);
 //        slep(driver);
-//        StringSelection st3= new StringSelection("");
-//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(st3,null);
+//        StringSelection s2 = new StringSelection("Pictures");
+//        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s2,null);
+//        slep(driver);
 //        copy_paste(driver);
-//        enterkey(driver);
+//        slep(driver);
+//        enter(driver);
+        StringSelection s3 = new StringSelection("one");
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s3,null);
         slep(driver);
+        copy_paste(driver);
+        slep(driver);
+        enter(driver);
+
         click(id.getTerms());
-        slep(driver);
         click(id.getSubmit());
     }
 }

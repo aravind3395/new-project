@@ -15,8 +15,9 @@ public class base_class {
     public static JavascriptExecutor jse;
     public static JavascriptExecutor jse1;
     public static Select se;
+    public static Robot rt;
     public static Actions ac;
-    public static Robot r;
+
 
 
 
@@ -110,39 +111,40 @@ public class base_class {
         ac.moveToElement(ele).perform();
     }
 
-    public static void  enterkey(WebDriver driver) throws AWTException {
-        Robot rt = new Robot();
+    public static void  enter(WebDriver driver) throws AWTException {
+        rt = new Robot();
         rt.keyPress(KeyEvent.VK_ENTER);
         rt.keyRelease(KeyEvent.VK_ENTER);
     }
     public static void  down(WebDriver driver) throws AWTException {
-        Robot rt = new Robot();
+        rt = new Robot();
         rt.keyPress(KeyEvent.VK_DOWN);
 //        r.keyPress(KeyEvent.VK_DOWN);
         rt.keyRelease(KeyEvent.VK_DOWN);}
     public static void  up(WebDriver driver) throws AWTException {
-        Robot rt = new Robot();
+        rt = new Robot();
         rt.keyPress(KeyEvent.VK_UP);
         rt.keyRelease(KeyEvent.VK_UP);}
     public static void  tab(WebDriver driver) throws AWTException {
-        Robot rt = new Robot();
+        rt = new Robot();
         rt.keyPress(KeyEvent.VK_TAB);
         rt.keyRelease(KeyEvent.VK_TAB);}
 
     public static void copy_paste(WebDriver driver) throws AWTException {
-    Robot rt = new Robot();
+        rt = new Robot();
         rt.keyPress(KeyEvent.VK_CONTROL);
         rt.keyPress(KeyEvent.VK_V);
         rt.keyRelease(KeyEvent.VK_CONTROL);
-        rt.keyPress(KeyEvent.VK_V);}
+        rt.keyRelease(KeyEvent.VK_V);
+    }
 
-    public static void deletekey(WebDriver driver) throws AWTException {
-        Robot rt = new Robot();
-        r.keyPress(KeyEvent.VK_DELETE);
-        r.keyRelease(KeyEvent.VK_DELETE);
+    public static void delete (WebDriver driver) throws AWTException {
+        rt = new Robot();
+        rt.keyPress(KeyEvent.VK_DELETE);
+        rt.keyRelease(KeyEvent.VK_DELETE);
     }
     public static void slep(WebDriver driver) throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(2000);
     }
     public static void impilcitwait(WebDriver driver){
 
