@@ -107,7 +107,7 @@ Insurance_details id =new Insurance_details (driver);
         copy_paste(driver);
         enterkey(driver);
         slep(driver);
-        StringSelection st1= new StringSelection("25 (1) (1)");
+        StringSelection st1= new StringSelection("25 (1) (1).jpg");
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(st1,null);
         copy_paste(driver);
         enterkey(driver);
